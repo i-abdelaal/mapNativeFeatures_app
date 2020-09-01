@@ -6,6 +6,16 @@ import Colors from "../constants/Colors";
 
 const PlaceDetailScreen = (props) => {
   const place = props.navigation.getParam("item");
+  const selectedLocation = { lat: place.lat, lng: place.lng };
+
+  const showMapHandler = () => {
+    props.navigation.navigate("Map", {
+      readonly: true,
+      initialLocation: selectedLocation,
+      address: place.address,
+    });
+  };
+
   return (
     <ScrollView contentContainerStyle={{ alignItems: "center" }}>
       <Image style={styles.image} source={{ uri: place.imageUri }} />
@@ -15,7 +25,8 @@ const PlaceDetailScreen = (props) => {
         </View>
         <MapPreview
           style={styles.mapPreview}
-          location={{ lat: place.lat, lng: place.lng }}
+          location={selectedLocation}
+          onPress={showMapHandler}
         />
       </View>
     </ScrollView>
