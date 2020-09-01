@@ -44,7 +44,7 @@ const NewPlaceScreen = (props) => {
           value={titleValue}
         />
         <PhotoPicker onImageTaken={imageTakenHandler} />
-        <LocationPicker />
+        <LocationPicker navigation={props.navigation} />
         <Button
           title="Save Place"
           color={Colors.primary}
