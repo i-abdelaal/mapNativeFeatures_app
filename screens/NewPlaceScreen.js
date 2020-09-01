@@ -15,6 +15,7 @@ import PhotoPicker from "../components/PhotoPicker";
 
 const NewPlaceScreen = (props) => {
   const [titleValue, setTitleValue] = useState("");
+  const [selectedImage, setSelectedImage] = useState();
 
   const dispatch = useDispatch();
 
@@ -22,8 +23,12 @@ const NewPlaceScreen = (props) => {
     setTitleValue(text);
   };
 
+  const imageTakenHandler = (imagePath) => {
+    setSelectedImage(imagePath);
+  };
+
   const savePlaceHandler = () => {
-    dispatch(addPlace(titleValue));
+    dispatch(addPlace(titleValue, selectedImage));
     props.navigation.goBack();
   };
 
@@ -36,7 +41,7 @@ const NewPlaceScreen = (props) => {
           onChangeText={titleChangeHndler}
           value={titleValue}
         />
-        <PhotoPicker />
+        <PhotoPicker onImageTaken={imageTakenHandler} />
         <Button
           title="Save Place"
           color={Colors.primary}
