@@ -62,11 +62,11 @@ const MapScreen = (props) => {
 
 MapScreen.navigationOptions = (navData) => {
   const readonly = navData.navigation.getParam("readonly");
-  const address = navData.navigation.getParam("address");
+  const title = navData.navigation.getParam("title");
   const saveFn = navData.navigation.getParam("saveLocation");
   if (readonly) {
     return {
-      headerTitle: address,
+      headerTitle: `${title} Location`,
     };
   }
   return {

@@ -12,7 +12,7 @@ const PlaceDetailScreen = (props) => {
     props.navigation.navigate("Map", {
       readonly: true,
       initialLocation: selectedLocation,
-      address: place.address,
+      title: place.title,
     });
   };
 
