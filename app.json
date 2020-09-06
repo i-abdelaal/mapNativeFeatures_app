@@ -1,21 +1,20 @@
 {
   "expo": {
-    "name": "nativeFeatures_app",
-    "slug": "nativeFeatures_app",
+    "name": "Great Places app",
+    "description": "Take your favourite photos & mark them on google map 'using a dummy Api' to restore your wonderful memories whenever you wish.",
+    "slug": "great_places_app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/map.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/map.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#171717"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
